@@ -1,0 +1,127 @@
+.sideMenu_overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $black70;
+  transition: 0.4s;
+}
+
+.sideMenu_container {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 761px;
+  height: 200%;
+  background: rgba(36, 36, 36, 0.9);
+  padding: 32px 88px;
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: 100%;
+    padding: 24px;
+    background: $black;
+  }
+}
+
+.sideMenu_header {
+  display: flex;
+  align-items: center;
+  padding-right: 14px;
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding: 0;
+    justify-content: space-between;
+  }
+}
+
+.sideMenu_close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    flex: unset;
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.sideMenu_notification {
+  padding-right: 40px;
+  cursor: pointer;
+  @media screen and (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.sideMenu_profile {
+  cursor: pointer;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.sideMenu_links-container {
+  padding-top: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 72px;
+  color: $white;
+  font-size: 22px;
+  button {
+    color: $white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    font-size: 16px;
+  }
+}
+
+.sideMenu_links {
+  list-style: none;
+  li {
+    padding-bottom: 40px;
+    cursor: pointer;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.sideMenu_addMovie {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 16px;
+}
+
+.sideMenu_logo {
+  display: none;
+  color: $aqua;
+  font-size: 28px;
+  span {
+    font-weight: 700;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    display: block;
+  }
+}

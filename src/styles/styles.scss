@@ -1,0 +1,13 @@
+/* Base */
+@import './base/_fonts';
+@import './base/_variables';
+@import './base/_reset.scss';
+
+/* Components */
+@import './components/_addMovieModal.scss';
+@import './components/_uploadMovie.scss';
+@import './components/_navbar.scss';
+@import './components/_sideMenu.scss';
+@import './components/_home.scss';
+@import './components/_sidePanel.scss';
+@import './components/_sideMovie.scss';

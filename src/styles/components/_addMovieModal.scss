@@ -1,0 +1,201 @@
+.disableOverlay {
+  background: transparent;
+}
+
+.modal_overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $black70;
+  transition: 0.4s;
+}
+
+.addMovieModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal_container {
+  width: 730px;
+  height: 450px;
+  background-color: $black;
+  padding: 24px;
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.modal_close-icon {
+  float: right;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.modal_content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 24px;
+  align-items: center;
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding: 0;
+    margin-top: 96px;
+  }
+}
+
+.modal_content-title {
+  color: $aqua;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal_input-title {
+  background: none;
+  color: $white;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid;
+  width: 248px;
+  padding-bottom: 8px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  &::placeholder {
+    color: $white;
+    text-align: center;
+  }
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $aqua;
+  }
+}
+
+.modal_add-movie-button {
+  background-color: $white;
+  width: 248px;
+  height: 56px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $black;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:disabled {
+    background-color: $white50;
+    cursor: default;
+  }
+}
+
+.modal_header {
+  display: none;
+  @media screen and (max-width: $breakpoint-tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.modal_profile {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  img {
+    border-radius: 50%;
+  }
+}
+
+.modal_logo {
+  color: $aqua;
+  font-size: 28px;
+  span {
+    font-weight: 700;
+  }
+  &.desktop {
+    font-size: 34px;
+    padding-bottom: 72px;
+    @media screen and (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+}
+
+.modal_menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  svg {
+    transform: scaleX(-1);
+  }
+}
+
+.modal_close-button {
+  visibility: hidden;
+  margin: 0 auto;
+  margin-top: 24px;
+  background-color: transparent;
+  width: 248px;
+  height: 56px;
+  border: 1px solid $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  cursor: pointer;
+  @media screen and (max-width: $breakpoint-tablet) {
+    visibility: visible;
+  }
+}
+
+.modal_success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.modal_success-message {
+  color: $white;
+  font-weight: 700;
+  font-size: 24px;
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding-top: 190px;
+  }
+}
+
+.modal_success-text {
+  color: $white;
+  font-size: 20px;
+  padding-top: 24px;
+}
+
+.modal_success-close {
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 248px;
+  height: 56px;
+  border: none;
+  margin-top: 90px;
+  cursor: pointer;
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin-top: 130px;
+  }
+}

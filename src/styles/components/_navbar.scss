@@ -1,0 +1,86 @@
+.navbar_container {
+  height: 40px;
+  position: absolute;
+  top: 32px;
+  padding: 0 104px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding: 0 24px;
+  }
+}
+
+.navbar_logo {
+  color: $aqua;
+  font-size: 34px;
+  span {
+    font-weight: 700;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    margin: 0 auto;
+    font-size: 28px;
+  }
+}
+
+.navbar_add-movie {
+  margin-left: 90px;
+  flex: 1;
+  button {
+    color: $white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  p {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.navbar_menu-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    position: absolute;
+    left: 24px;
+    svg {
+      transform: scaleX(-1) !important;
+    }
+  }
+}
+
+.navbar_notification {
+  margin: 0 40px;
+  cursor: pointer;
+  @media screen and (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.navbar_profile {
+  cursor: pointer;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    position: absolute;
+    right: 24px;
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}

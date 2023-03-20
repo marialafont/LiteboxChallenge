@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from 'react';
+import { Home } from './components/Home/Home';
+import { Navbar } from './components/Navbar/Navbar';
+import Modal from 'react-modal';
+import { AddMovieModal } from './components/AddMovieModal/AddMovieModal';
+import { motion, AnimatePresence } from 'framer-motion';
 
-function App() {
-  const [count, setCount] = useState(0)
+Modal.setAppElement('#root');
+
+export const App = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  function openModal() {
+    setModalOpen(true);
+  }
+  function closeModal() {
+    setModalOpen(false);
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    <>
+      <Navbar openModal={openModal} />
+      <Home />
+      <AnimatePresence>
+        {modalOpen && (
+          <>
+            <motion.div variants={overlay} initial="initial" animate="end" exit="exit" key="overlay" className="modal_overlay" />
+            <Modal isOpen={modalOpen} onRequestClose={closeModal} overlayClassName="disableOverlay" className="addMovieModal" contentLabel="Add Movie Modal">
+              <AddMovieModal closeModal={closeModal} />
+            </Modal>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
 
-export default App
+const overlay = {
+  initial: { opacity: 0 },
+  end: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+};
